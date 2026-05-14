@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 
 const ham = document.getElementById('hamburger');
 const drawer = document.getElementById('drawer');
@@ -30,7 +30,7 @@ form?.addEventListener('submit', (e) => {
   statusEl.style.color = '#22c55e';
   form.reset();
 });
-=======
+
 
 const ham = document.getElementById('hamburger');
 const drawer = document.getElementById('drawer');
@@ -62,4 +62,17 @@ form?.addEventListener('submit', (e) => {
   statusEl.style.color = '#22c55e';
   form.reset();
 });
->>>>>>> c50da27c4e759e6f9240e5743abff7252981044e
+
+const elements = document.querySelectorAll('.fade');
+
+const reveal = () => {
+  elements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 100) {
+      el.classList.add('show');
+    }
+  });
+};
+
+window.addEventListener('scroll', reveal);
+window.addEventListener('load', reveal);
